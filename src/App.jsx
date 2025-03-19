@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom'; // Updated for react-router-dom v6
 import './App.css';
 
 // Sample components for your routes (replace with actual components)
-import Feed from './Feed';
-import Login from './Login';
-import Signup from './Signup';
+import Feed from './pages/Feed';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,11 +31,11 @@ function App() {
 
       <main>
         {/* Routing setup */}
-        <Switch>
-          <Route path="/" exact component={Feed} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Feed />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
       </main>
 
       {/* Footer */}
