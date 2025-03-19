@@ -1,3 +1,48 @@
+/* General reset for the page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;  /* Dark background */
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Navigation Bar Styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6347;  /* Tomato color on hover */
+}
+
+/* Active Link Style */
+nav a.active {
+  color: #ff6347;  /* Tomato color when the link is active */
+}
+
+/* Additional Styles (Existing) */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -11,10 +56,12 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
+
+.logo.dnd:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 

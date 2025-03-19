@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom'; // Updated for react-router-dom v6
+import { Route, Routes, NavLink } from 'react-router-dom'; // Use Routes instead of Switch
 import './App.css';
 
-// Sample components for your routes (replace with actual components)
-import Feed from './pages/Feed';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+// Sample components for your routes
+import Feed from './pages/Feed.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+
+import dnd from './assets/dnd.png';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,13 +19,19 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Feed</Link>
+              <NavLink to="/" exact="true" activeClassName="active">
+                Feed
+              </NavLink>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <NavLink to="/login" activeClassName="active">
+                Login
+              </NavLink>
             </li>
             <li>
-              <Link to="/signup">Sign Up</Link>
+              <NavLink to="/signup" activeClassName="active">
+                Sign Up
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -41,13 +49,10 @@ function App() {
       {/* Footer */}
       <footer>
         <p>
-          Click on the logos to learn more about Vite and React.
+          Click on the logo to learn more about Dungeons and Dragons.
         </p>
-        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/react.svg" className="logo react" alt="React logo" />
+        <a href="https://www.dndbeyond.com/?srsltid=AfmBOoppvykMAKQQW6cxw1CeEEMNvm9i9eA0wc3USJm3lgl7qnSx6Emd" target="_blank" rel="noopener noreferrer">
+          <img src="/src/assets/dnd.png" className="logo dnd" alt="DnD logo" />
         </a>
       </footer>
     </div>
