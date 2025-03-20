@@ -29,7 +29,7 @@ function PostChirp() {
                     text: newChirp,
                     createdAt: new Date(),
                     userId: user.uid, // Store the user's UID as a string
-                    username: user.displayName || 'Anonymous', // Use display name or default to 'Anonymous'
+                    username: user.displayName || 'Shrouded Figure', // Use display name or default to 'Anonymous'
                 });
 
                 console.log("Chirp successfully added to firestore!");
