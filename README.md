@@ -2,23 +2,31 @@
 A social platform for my Dungeons & Dragons group where adventurers can connect, share updates, and relive epic moments!
 
 ---------------------------------------------
-**✨ Features**
+**✨ Features:**
+
     🧙 Real-time posts and updates
+    
     🎲 Interactive comments and reactions
+    
     🔥 User authentication and personalized dashboards
+    
     📚 Firebase-powered backend for storage and data
     
 ---------------------------------------------
 
-**🛠️ Tech Stack**
+**🛠️ Tech Stack:**
+
     Frontend: React.js ⚛️
+    
     Backend: Firebase 🔥
+    
     CSS/Styled Components 🎨
+    
     Authentication: Firebase Auth 🔐
 
 ---------------------------------------------
 
-**🚀 Getting Started**
+**🚀 Getting Started:**
 
 Spin up the app and try it out!
 
@@ -34,16 +42,20 @@ _Run the app:_
 
 ---------------------------------------------
 
-📸 Screenshots (Optional but HIGHLY recommended!)
+**📸 Screenshots (Optional but HIGHLY recommended!):**
 _**Add a few screenshots/GIFs of the interface!**___
 
 
 ---------------------------------------------
 
-🎯 Future Improvements
+**🎯 Future Improvements:**
+
   📝 Add profile customization
+  
   🎮 Implement real-time chat functionality
+  
   🎲 Add an interactive dice roller
+  
   📅 Create a campaign calendar feature
   
 ---------------------------------------------
