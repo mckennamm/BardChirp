@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "EFCO Brookshire";
+    src: url("../assets/fonts/EFCOBrookshireRegular.woff2") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  
+  /* Apply the font */
+  body {
+    font-family: "EFCO Brookshire", sans-serif;
+  }
+
+
+/* Login.css */
+
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f3f4f6; /* Light gray */
+  }
+  
+  .login-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+  }
+  
+  .login-box h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-family: "EFCO Brookshire", sans-serif;
+  }
+  
+  .login-input {
+    width: 100%;
+    font-family:'Times New Roman', Times, serif;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .login-btn {
+    background-color: #7f4ba2; /* Indigo */
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #7f4ba2 ;
+  }
+  

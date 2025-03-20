@@ -29,14 +29,14 @@ const Feed = () => {
   }, []);
 
   return (
-    <div>
+    <div className="feed-wrapper">
       <PostChirp />
-      {error ? <p>{error}</p> : (
+      {error ? <p className="error-message">{error}</p> : (
         chirps.map((chirp) => (
-          <div key={chirp.id} className="chirp">
-            <h3>{chirp.username || "Anonymous"}</h3>
-            <p>{chirp.text}</p>
-            <small>{chirp.timestamp ? new Date(chirp.timestamp).toLocaleString() : "Just now"}</small>
+          <div key={chirp.id} className="chirp-item">
+            <h3 className="chirp-user">{chirp.username || "Anonymous"}</h3>
+            <p className="chirp-text">{chirp.text}</p>
+            <small className="chirp-timestamp">{chirp.timestamp ? new Date(chirp.timestamp).toLocaleString() : "Just now"}</small>
           </div>
         ))
       )}
