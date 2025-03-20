@@ -1,33 +1,45 @@
 import { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore'; // Import Firestore functions
-import { db } from '../config/firebase'; // Import Firebase configuration
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../config/firebase';
+
+import PostChirp from '../components/PostChirp';
 
 const Feed = () => {
-  const [posts, setPosts] = useState([]);
+  const [chirps, setChirps] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchChirps = async () => {
       try {
-        const postsCollection = collection(db, 'posts');
-        const postsSnapshot = await getDocs(postsCollection);
-        const postsList = postsSnapshot.docs.map(doc => doc.data());
-        setPosts(postsList);
+        const querySnapshot = await getDocs(collection(db, 'chirps'));
+        const chirpsData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        
+        // Optional: Sort chirps by timestamp (if available)
+        chirpsData.sort((a, b) => b.timestamp - a.timestamp);
+
+        setChirps(chirpsData);
       } catch (error) {
-        console.error("Error fetching posts:", error);
+        setError("Error fetching chirps: " + error.message);
       }
     };
-
-    fetchPosts();
+    fetchChirps();
   }, []);
 
   return (
     <div>
-      <h1>Feed</h1>
-      <ul>
-        {posts.map((post, index) => (
-          <li key={index}>{post.content}</li>
-        ))}
-      </ul>
+      <PostChirp />
+      {error ? <p>{error}</p> : (
+        chirps.map((chirp) => (
+          <div key={chirp.id} className="chirp">
+            <h3>{chirp.username || "Anonymous"}</h3>
+            <p>{chirp.text}</p>
+            <small>{chirp.timestamp ? new Date(chirp.timestamp).toLocaleString() : "Just now"}</small>
+          </div>
+        ))
+      )}
     </div>
   );
 };
