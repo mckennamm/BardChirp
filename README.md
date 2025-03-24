@@ -1,4 +1,4 @@
-**🐉 BardChirp**
+**🐉 BardChirp (IN-PROGRESS)**
 A social platform for my Dungeons & Dragons group where adventurers can connect, share updates, and relive epic moments!
 
 **_Website Link:_**
