@@ -84,14 +84,17 @@ header {
   @media (max-width: 768px) {
     header {
       padding: 15px 0;
+      height: 100px;  /* Allow header to adjust height */
     }
     
     nav ul {
-      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   
     nav li {
-      margin: 10px 0;
+      margin: 10px;
     }
     
     nav a {
