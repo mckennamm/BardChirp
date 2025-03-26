@@ -1,0 +1,48 @@
+/* Footer Styles */
+footer {
+    background-color: #2f4f4f;  /* Charcoal gray background */
+    padding: 30px 0;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;  /* Medieval-style font */
+    border-top: 2px solid #b5651d;  /* Brownish border for separation */
+  }
+  
+  footer a {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  footer img.logo {
+    max-height: 80px;
+    margin-top: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  footer img.logo:hover {
+    transform: scale(1.1);  /* Slight zoom effect */
+    filter: sepia(50%);  /* Adds a warm, aged effect */
+  }
+  
+  footer p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #d2b48c;  /* Light tan for footer text */
+  }
+  
+  /* Mobile responsiveness for footer */
+  @media (max-width: 768px) {
+    footer {
+      padding: 20px 0;
+    }
+  
+    footer img.logo {
+      max-height: 70px;
+    }
+  
+    footer p {
+      font-size: 0.85rem;
+    }
+  }
+  

@@ -1,0 +1,86 @@
+/* Header Styles */
+header {
+    background-color: #2f4f4f;  /* Dark slate green background */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);  /* Soft shadow for depth */
+    font-family: 'Merriweather', serif;  /* Medieval-esque font */
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header button {
+    background-color: #b5651d;  /* Earthy brown for buttons */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  header button:hover {
+    background-color: #8b4513;  /* Slightly darker brown on hover */
+  }
+  
+  /* Navigation Bar Styles */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #d2b48c;  /* Light tan color (earthy tones) */
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'Merriweather', serif;  /* Medieval-style font */
+  }
+  
+  nav a:hover {
+    color: #b5651d;  /* Warm brown when hovering */
+  }
+  
+  /* Active Link Style */
+  nav a.active {
+    color: #ffcc00;  /* Gold/yellow for active link (medieval gold) */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 0;
+    }
+    
+    nav ul {
+      flex-direction: column;
+    }
+  
+    nav li {
+      margin: 10px 0;
+    }
+    
+    nav a {
+      font-size: 16px;
+    }
+    
+    header button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  }
+  

@@ -1,33 +1,28 @@
 import { useState, useEffect } from 'react';
-import { Route, Routes, NavLink } from 'react-router-dom'; // Use Routes instead of Switch
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
-// Sample components for your routes
-import Feed from './pages/Feed.jsx';
-import Login from './pages/Login.jsx';
-import Signup from './pages/Signup.jsx';
+// Import components
+import Header from './components/Header';
+import Footer from './components/Footer';
 
+
+// Import pages
+import Feed from './pages/Feed';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Profile from './pages/Profile';
 // Firebase imports
-import { auth } from './config/firebase'; // Firebase auth import
+import { auth } from './config/firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 
-// Import DnD logo
-import dnd from './assets/dnd.png';
-
 function App() {
-  const [user, setUser] = useState(null); // State to track logged-in user
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Set up an observer to track the auth state (logged-in user)
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser); // User is logged in
-      } else {
-        setUser(null); // User is logged out
-      }
+      setUser(currentUser || null);
     });
-
-    // Clean up the observer when the component unmounts
     return () => unsubscribe();
   }, []);
 
@@ -35,61 +30,22 @@ function App() {
     try {
       await signOut(auth);
     } catch (error) {
-      console.error("Error signing out: ", error);
+      console.error('Error signing out: ', error);
     }
   };
 
   return (
     <div className="app">
-      {/* Header with navigation */}
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/" exact="true" className={({ isActive }) => (isActive ? 'active' : '')}>
-                Feed
-              </NavLink>
-            </li>
-            {!user ? (
-              <>
-                <li>
-                  <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : '')}>
-                    Login
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/signup" className={({ isActive }) => (isActive ? 'active' : '')}>
-                    Sign Up
-                  </NavLink>
-                </li>
-              </>
-            ) : (
-              <li>
-                <button onClick={handleLogout}>Logout</button>
-              </li>
-            )}
-          </ul>
-        </nav>
-      </header>
-
+      <Header user={user} handleLogout={handleLogout} />
       <main>
-        {/* Routing setup */}
         <Routes>
           <Route path="/" element={user ? <Feed /> : <Login />} />
+          <Route path="/profile" element={user ? <Profile /> : <Login />} />
           <Route path="/login" element={!user ? <Login /> : <Feed />} />
           <Route path="/signup" element={!user ? <Signup /> : <Feed />} />
         </Routes>
       </main>
-
-      {/* Footer */}
-      <footer>
-        <p>
-          Click on the logo to learn more about Dungeons and Dragons.
-        </p>
-        <a href="https://www.dndbeyond.com/?srsltid=AfmBOoppvykMAKQQW6cxw1CeEEMNvm9i9eA0wc3USJm3lgl7qnSx6Emd" target="_blank" rel="noopener noreferrer">
-          <img src={dnd} className="logo dnd" alt="DnD logo" />
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
