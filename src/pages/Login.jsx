@@ -3,6 +3,8 @@ import { auth } from "../config/firebase.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "./Login.css"; // Import the stylesheet
 
+import logo from '../assets/BardChirpLogo.svg'; // Import the logo
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,6 +21,7 @@ const Login = () => {
   
   return (
     <div className="login-container">
+      <img src={logo} alt="Bard Chirp Logo" className="login-logo" />
       <div className="login-box">
         <h2>Log In</h2>
         <form onSubmit={login}>
