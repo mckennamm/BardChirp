@@ -1,3 +1,14 @@
+.post-chirp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Light gray */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .post-chirp-btn {
     font-family: 'IM Fell English SC', serif;
     background-color: #2f4f4f; /* Brown */
@@ -8,4 +19,30 @@
     border-radius: 5px;
     cursor: pointer;
     margin: 20px 0;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: 'IM Fell English SC', serif;
+}
+
+.chirp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #2f4f4f; /* Brown */
+    color: white;
+    font-family: 'IM Fell English SC', cursive; /* Medieval-esque font */
+    text-transform: uppercase;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }

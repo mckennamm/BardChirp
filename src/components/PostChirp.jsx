@@ -62,7 +62,7 @@ function PostChirp() {
                         rows="4"
                         cols="50"
                     />
-                    <button type="submit">Chirp</button>
+                    <button className="chirp-btn" type="submit">Chirp</button>
                 </form>
             )}
         </div>
