@@ -1,12 +1,21 @@
 .profile {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #f9f9f9; /* Light background for the feed */
+    border-radius: 10px;
+    width: 1200px;
+
+    max-width: 800px;
   }
   
   .profile-info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    font-family: 'Merriweather', serif;
   }
   
   .avatar-container {

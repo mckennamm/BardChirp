@@ -11,6 +11,23 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+  }
+
+  .bardchirp-logo {
+    width: 100px;  /* Adjusted size for the logo */
+    height: auto;
+    margin-top: 20px;  /* Space above the logo */    
+    margin-right: 0; 
+    margin-left: 0;
+    margin-bottom: 20px;
+    animation:logo-spin .5s linear;  /* Spinning animation */
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-direction: normal;
+    animation-delay: 0s;
+  
+
   }
   
   header button {
@@ -34,6 +51,7 @@ header {
     list-style: none;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0;
   }

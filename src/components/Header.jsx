@@ -1,16 +1,20 @@
 import './Header.css';
 import { NavLink } from 'react-router-dom';
 
+import logo from '../assets/BardChirpLogo.svg';
+
 function Header({ user, handleLogout }) {
   return (
     <header>
       <nav>
+      
         <ul>
           <li>
             <NavLink to="/" exact="true" className={({ isActive }) => (isActive ? 'active' : '')}>
               Feed
             </NavLink>
           </li>
+          <li> <img src={logo} alt="Bard Chirp Logo" className="bardchirp-logo" /></li>
 
           {/* Show the Profile link only when the user is logged in */}
           {user && (

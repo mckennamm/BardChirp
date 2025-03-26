@@ -72,6 +72,35 @@ function Profile() {
             // Reset preview if no file is selected
             setAvatarPreview(userData.avatar || "path/to/default-avatar.png");
         }
+
+        const handleAvatarChange = (e) => {
+            const file = e.target.files[0];
+            
+            if (file) {
+                // Check file type (optional)
+                const validFileTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+                if (!validFileTypes.includes(file.type)) {
+                    setError('Invalid file type. Only JPG, JPEG, and PNG files are allowed.');
+                    return;
+                }
+                
+                // Check file size (optional, max 5MB for example)
+                if (file.size > 5 * 1024 * 1024) {
+                    setError('File is too large. Please upload an image smaller than 5MB.');
+                    return;
+                }
+        
+                setNewAvatar(file);
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setAvatarPreview(reader.result);
+                };
+                reader.readAsDataURL(file);
+            } else {
+                setError('No file selected.');
+            }
+        };
+        
     };
     
 
@@ -122,10 +151,10 @@ function Profile() {
                 <div className="profile-info">
                     <div className="avatar-container">
                     <img 
-    src={avatarPreview || userData.avatar || null} 
-    alt={userData.username + "'s Avatar"} 
-    className="avatar-img" 
-/>
+                        src={avatarPreview || userData.avatar || null} 
+                        alt={userData.username + "'s Avatar"} 
+                        className="avatar-img" 
+                    />
 
                     </div>
                     <h2>{userData.username}</h2>

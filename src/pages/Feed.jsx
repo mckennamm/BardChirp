@@ -48,7 +48,7 @@ const Feed = () => {
 
   return (
     <div className="feed-wrapper">
-      <img src={logo} alt="Bard Chirp Logo" className="bardchirp-logo" />
+      {/* <img src={logo} alt="Bard Chirp Logo" className="bardchirp-logo" /> */}
       <PostChirp />
       {error ? <p className="error-message">{error}</p> : (
         chirps.map((chirp) => (
