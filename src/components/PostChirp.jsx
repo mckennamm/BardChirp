@@ -3,6 +3,8 @@ import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../config/firebase';
 import { auth } from '../config/firebase'; // Import Firebase Auth
 
+import './PostChirp.css';
+
 function PostChirp() {
     const [isFormVisible, setIsFormVisible] = useState(false);
     const [newChirp, setNewChirp] = useState('');
@@ -47,8 +49,8 @@ function PostChirp() {
 
     return (
         <div className="post-chirp">
-            <button onClick={handleClick}>
-                {isFormVisible ? "Cancel" : "Chirp Here"}
+            <button className="post-chirp-btn" onClick={handleClick}>
+                {isFormVisible ? "Cancel" : "Click here to Chirp"}
             </button>
 
             {isFormVisible && (

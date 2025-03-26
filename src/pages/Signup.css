@@ -1,0 +1,65 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: #f0f0f0;
+    font-family: 'Merriweather', serif;
+    color: #333;
+    padding: 20px; 
+    width: 100%;
+    max-width: 1200px;
+}
+
+.bardchirp-logo{
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px; 
+};
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+form input {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.signup button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #2f4f4f; /* Brown */
+    color: white;
+    font-family: 'IM Fell English SC', cursive; /* Medieval-esque font */
+    text-transform: uppercase;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+
+}

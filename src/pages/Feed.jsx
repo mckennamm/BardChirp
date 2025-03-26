@@ -56,7 +56,7 @@ const Feed = () => {
             <button className="delete-btn" onClick={() => deleteChirp(chirp.id)}>
               X
             </button>
-            <h3 className="chirp-user">{chirp.username || "Anonymous"}</h3>
+            <h3 className="chirp-user">@{chirp.username || "Anonymous"}</h3>
             <p className="chirp-text">{chirp.text}</p>
             <small className="chirp-timestamp">{chirp.timestamp ? new Date(chirp.timestamp).toLocaleString() : "Just now"}</small>
           </div>

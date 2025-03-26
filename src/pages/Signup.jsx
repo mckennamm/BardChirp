@@ -5,6 +5,9 @@ import { auth, db } from '../config/firebase'; // Import your Firebase auth and 
 import { doc, setDoc } from 'firebase/firestore'; // Import Firestore methods
 import { updateProfile } from 'firebase/auth'; // Import the updateProfile method
 
+import './Signup.css'; // Import your CSS file for styling
+import logo from  '../assets/BardChirpLogo.svg'; // Import your logo
+
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -43,11 +46,13 @@ function Signup() {
   };
 
   return (
-    <div>
-      <h2>Sign Up</h2>
+    <div className="signup">
+      <img src={logo} alt="Bard Chirp Logo" className="bardchirp-logo" />
+
       {/* Display error message if there's an error */}
       {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
+      <form className="signup-form" onSubmit={handleSubmit}>
+      <h2>Sign Up</h2>
         <input
           type="email"
           placeholder="Email"
@@ -66,7 +71,7 @@ function Signup() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" clasName="signup-btn">Sign Up</button>
       </form>
     </div>
   );

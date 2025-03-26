@@ -7,19 +7,35 @@ function Header({ user, handleLogout }) {
   return (
     <header>
       <nav>
-      
         <ul>
+          {/* Show the logo only when no user is logged in */}
+          {user && (
+            <li>
+              <img 
+                src={logo} 
+                alt="Bard Chirp Logo" 
+                className="bardchirp-logo"
+              />
+            </li>
+          )}
+
+          {/* Feed link */}
           <li>
-            <NavLink to="/" exact="true" className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
               Feed
             </NavLink>
           </li>
-          <li> <img src={logo} alt="Bard Chirp Logo" className="bardchirp-logo" /></li>
 
           {/* Show the Profile link only when the user is logged in */}
           {user && (
             <li>
-              <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : '')}>
+              <NavLink 
+                to="/profile" 
+                className={({ isActive }) => (isActive ? 'active' : '')}
+              >
                 Profile
               </NavLink>
             </li>
@@ -29,12 +45,18 @@ function Header({ user, handleLogout }) {
           {!user ? (
             <>
               <li>
-                <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : '')}>
+                <NavLink 
+                  to="/login" 
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
                   Login
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/signup" className={({ isActive }) => (isActive ? 'active' : '')}>
+                <NavLink 
+                  to="/signup" 
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
                   Sign Up
                 </NavLink>
               </li>

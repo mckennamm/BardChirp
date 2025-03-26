@@ -1,6 +1,11 @@
-.post-chirp button {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #4CAF50;
+.post-chirp-btn {
+    font-family: 'IM Fell English SC', serif;
+    background-color: #2f4f4f; /* Brown */
+    font-size: 2rem;
     color: white;
-    
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
 }
